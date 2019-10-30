@@ -13,7 +13,7 @@ yarn dev
 
 | Path          | Method | Description                               | Body JSON fields                                                                  | Authentication Required |
 | ------------- | :----: | ----------------------------------------- | --------------------------------------------------------------------------------- | ----------------------- |
-| /sessions     |  POST  | Creates a new session (generates a token) | email: string, password: string                                                   |
+| /sessions     |  POST  | Creates a new session (generates a token) | email: string, password: string                                                   | No                      |
 | /users        |  POST  | Creates a new user                        | name: string, email: string, password: string                                     | No                      |
 | /users        |  PUT   | Updates an user                           | name: string, email: string, [password: string]                                   | yes                     |
 | /students     |  GET   | Retrieves all students                    | N/A                                                                               | yes                     |
