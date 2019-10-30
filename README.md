@@ -11,13 +11,14 @@ yarn dev
 
 ## Routes
 
-| Path          | Method | Description                | Body fields                                                             |
-| ------------- | :----: | -------------------------- | ----------------------------------------------------------------------- |
-| /users        |  GET   | Retrieves all users        | N/A                                                                     |
-| /users/:id    |  GET   | Retrieves an user by id    | N/A                                                                     |
-| /users/       |  POST  | Creates a new user         | name: string, email: string, password: string                           |
-| /users/:id    |  PUT   | Updates an user            | name: string, email: string, [password: string]                         |
-| /students     |  GET   | Retrieves all students     | N/A                                                                     |
-| /students/:id |  GET   | Retrieves an student by id | N/A                                                                     |
-| /students/    |  POST  | Creates a new student      | name: string, email: string, age: integer, weight: float, height: float |
-| /students/:id |  PUT   | Updates an user            | name: string, email: string, age: integer, weight: float, height: float |
+| Path          | Method | Description                               | Body JSON fields                                                                  | Authentication Required |
+| ------------- | :----: | ----------------------------------------- | --------------------------------------------------------------------------------- | ----------------------- |
+| /sessions     |  POST  | Creates a new session (generates a token) | email: string, password: string                                                   |
+| /users        |  POST  | Creates a new user                        | name: string, email: string, password: string                                     | No                      |
+| /users        |  PUT   | Updates an user                           | name: string, email: string, [password: string]                                   | yes                     |
+| /students     |  GET   | Retrieves all students                    | N/A                                                                               | yes                     |
+| /students/:id |  GET   | Retrieves an student by id                | N/A                                                                               | yes                     |
+| /students     |  POST  | Creates a new student                     | name: string, email: string, age: integer, weight: float, height: float           | yes                     |
+| /students/:id |  PUT   | Updates an user                           | [name: string], [email: string], [age: integer], [weight: float], [height: float] | yes                     |
+
+Where authetication is required, use token provided as header (authentication: bearer <token>).
